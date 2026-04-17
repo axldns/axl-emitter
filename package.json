@@ -1,0 +1,37 @@
+{
+  "name": "axl-emitter",
+  "version": "1.0.0",
+  "description": "Async event emitter with priority queues, once-listeners, and a mutable mid-flight queue.",
+  "keywords": ["emitter", "event", "async", "priority", "queue", "broadcaster"],
+  "license": "MIT",
+  "author": "axldns",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axldns/axl-emitter.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  }
+}
