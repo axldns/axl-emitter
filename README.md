@@ -8,13 +8,14 @@ Async event emitter with **priority queues** and a **mutable mid-flight listener
 - Any callback can mutate the queue while it's running: add listeners, remove them, or call `offAll()` to abort remaining callbacks.
 - Ships as both a **class** (`AxlEmitter`) and a standalone **utility function** (`processListeners`).
 - Dual package: **CJS** + **ESM**, full TypeScript types.
+- **Zero dependencies**, lightweight.
 
 ---
 
 ## Install
 
 ```sh
-npm install @axl/emitter
+npm install axl-emitter
 ```
 
 ---
@@ -35,7 +36,7 @@ class Dog extends AxlEmitter {
 const dog = new Dog();
 
 dog.on('bark', (sound) => console.log('neighbor heard:', sound), 10);
-dog.on('bark', () => console.log('whole street heard it'),         0);
+dog.on('bark', () => console.log('whole street heard it'), 0);
 
 await dog.bark();
 ```
