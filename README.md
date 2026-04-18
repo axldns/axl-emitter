@@ -1,4 +1,4 @@
-# @axl/emitter
+# axl-emitter
 
 Async event emitter with **priority queues** and a **mutable mid-flight listener list**.
 
@@ -25,7 +25,7 @@ npm install axl-emitter
 ### Extend the class
 
 ```ts
-import { AxlEmitter } from '@axl/emitter';
+import { AxlEmitter } from 'axl-emitter';
 
 class Dog extends AxlEmitter {
   bark() {
@@ -88,7 +88,7 @@ dog.on('bark', {
 Manage your own arrays without the class:
 
 ```ts
-import { processListeners, PriorityListener } from '@axl/emitter';
+import { processListeners, PriorityListener } from 'axl-emitter';
 
 const queue: PriorityListener<[string]>[] = [
   { callback: (msg) => console.log('B', msg), priority:  0 },
